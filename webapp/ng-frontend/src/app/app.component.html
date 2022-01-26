@@ -1,2 +1,10 @@
-<h1>Current counter value: {{ this.counter$ | async }}</h1>
+<h1>Current counter value: {{ counter$ | async }}</h1>
+<ul>
+    <li *ngFor="let label of buttonLabels">
+        <button (click)="handleClick(label)">
+            {{ label }}
+        </button>
+    </li>
+</ul>
+<h2>Last label clicked: {{ labels$ | async }} </h2>
 <router-outlet></router-outlet>
