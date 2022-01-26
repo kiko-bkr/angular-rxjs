@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+    background: rgb(159,42,42);
+    background: linear-gradient(171deg, rgba(159,42,42,1) 0%, rgba(59,19,122,1) 30%, rgba(9,9,121,1) 57%, rgba(0,133,159,1) 91%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    margin: 30px;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+.main-component {
+    padding: 1.5vw;
+    border-radius: 15px 50px 30px;
+}

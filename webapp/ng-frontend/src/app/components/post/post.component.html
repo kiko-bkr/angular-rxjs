@@ -1,0 +1,7 @@
+<div class="post-div main-component">
+    <h1>Post</h1>
+    <div *ngIf="(currentPost$ | async) as currentPost;">
+        <h3>{{currentPost.title}}</h3>
+        <p>{{currentPost.body}}</p>
+    </div>
+</div>

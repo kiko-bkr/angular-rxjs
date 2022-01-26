@@ -1,0 +1,8 @@
+:host {
+    display: flex;
+}
+
+.comment-div {
+    flex: 1;
+    background: beige;
+}
