@@ -4,5 +4,25 @@
 
 .post-div {
     flex: 1;
+    display: flex;
     background: wheat;
+}
+
+.header-div {
+    position: fixed;
+}
+
+.post-container-div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 10vh;
+    overflow-y: auto;;
+}
+
+.current-post-div {
+    padding: 1vw;
+    border-radius: 10px;
+    background: rgb(255,255,255);
+    background: linear-gradient(114deg, rgba(255,255,255,1) 0%, rgba(137,141,142,1) 93%, rgba(94,99,100,1) 100%);
 }
