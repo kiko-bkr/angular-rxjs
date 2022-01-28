@@ -3,19 +3,21 @@
         <h1>Post</h1>
     </div>
     <div class="post-container-div" *ngIf="(currentPost$ | async) as currentPost">
-        <div class="current-post-div" *ngIf="currentPost.id !== 0">
+        <div class="current-post-div" *ngIf="currentPost.id != 0">
             <h3>{{currentPost.title}}</h3>
             <p>{{currentPost.body}}</p>
         </div>
-        <div>
-            <h1>Comments</h1>
-        </div>
-        <div class="comments" *ngFor="let comment of currentComments$ | async">
+        <div *ngIf="currentPost.id != 0">
             <div>
-                <h3>{{ comment.title }}</h3>
-                <p [ngStyle]="{'color': comment.positive ? 'green' : 'red'}">
-                    {{ comment.body }}
-                </p>
+                <h1>Comments</h1>
+            </div>
+            <div class="comments" *ngFor="let comment of currentComments$ | async">
+                <div>
+                    <h3>{{ comment.title }}</h3>
+                    <p [ngStyle]="{'color': comment.positive ? 'green' : 'red'}">
+                        {{ comment.body }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
