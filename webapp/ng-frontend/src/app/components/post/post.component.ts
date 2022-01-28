@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { async } from '@angular/core/testing';
 import { Observable } from 'rxjs';
+import { Comment } from 'src/app/models/comment.model';
 import { Post } from 'src/app/models/post.model';
-import { PostService } from 'src/app/services/post.service';
+import { CommentService } from 'src/app/services/comment/comment.service';
+import { PostService } from 'src/app/services/post/post.service';
 
 @Component({
   selector: 'app-post',
@@ -11,7 +12,9 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class PostComponent {
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private commentService: CommentService) { }
 
   currentPost$: Observable<Post> = this.postService.getCurrentPost();
+
+  currentComments$: Observable<Comment[]> = this.commentService.getCurrentComments();
 }

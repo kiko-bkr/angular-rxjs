@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
-import { POSTS } from '../data/posts';
-import { Post } from '../models/post.model';
+import { POSTS } from '../../data/posts';
+import { Post } from '../../models/post.model';
+import { CommentService } from '../comment/comment.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
   private posts$: BehaviorSubject<Post[]> = new BehaviorSubject<Post[]>(POSTS);
-  private currentPost$: Subject<Post> = new Subject<Post>();
+  private currentPost$: BehaviorSubject<Post> = new BehaviorSubject<Post>({id: 0, title: '', body: ''});
   
   constructor() { }
 
