@@ -11,6 +11,14 @@
             <div>
                 <h1>Comments</h1>
             </div>
+            <form [formGroup]="formGroup">
+                <input id="radio-positive" type="radio" formControlName="positive" [value]=true>
+                <label for="radio-positive">Positive</label>
+                <input id="radio-negative" type="radio" formControlName="positive" [value]=false>
+                <label for="radio-negative">Negative</label>
+                <label id="label-contains" for="text-contains">Contains:</label>
+                <input id="text-contains" type="text" formControlName="contains" [value]="">
+            </form>
             <div class="comments" *ngFor="let comment of currentComments$ | async">
                 <div>
                     <h3>{{ comment.title }}</h3>

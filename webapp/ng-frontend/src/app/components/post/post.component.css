@@ -26,3 +26,12 @@
     background: rgb(255,255,255);
     background: linear-gradient(114deg, rgba(255,255,255,1) 0%, rgba(137,141,142,1) 93%, rgba(94,99,100,1) 100%);
 }
+
+input {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#label-contains {
+    margin-left: 20px;
+}
