@@ -4,5 +4,17 @@
 
 .comment-div {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     background: beige;
+}
+
+#form-comment {
+    display: flex;
+    flex-direction: column;
+}
+
+#input-comment-body {
+    resize: vertical;
+    max-height: 40vh;
 }

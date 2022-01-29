@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, last, merge, Observable } from 'rxjs';
 import { COMMENTS } from 'src/app/data/commens';
 import { Comment } from 'src/app/models/comment.model';
-import { CommentFilter } from 'src/app/models/commentfilter.model';
+import { CommentFilter } from 'src/app/models/comment-filter.model';
 import { Post } from 'src/app/models/post.model';
 import { PostService } from '../post/post.service';
+import { async } from '@angular/core/testing';
+import { CommentInput } from 'src/app/models/comment-input.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +29,18 @@ export class CommentService {
       .filter(comm => filter.positive === null ? true : comm.positive === filter.positive)
       .filter(comm => comm.body.toLowerCase().includes(filter.contains.toLowerCase()))
     );
+  }
+
+  addComment(comm: Comment, post: Post): void {
+    let lastId: number = this.comments[this.comments.length - 1].id;
+    let currentPostId: number = post.id;
+    this.comments = [...this.comments, {
+      id: lastId + 1, 
+      postId: currentPostId, 
+      title: comm.title, 
+      body: comm.body, 
+      positive: comm.positive 
+    }];
+    this.comments$.next(this.comments);
   }
 }
