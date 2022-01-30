@@ -1,0 +1,27 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 80px);
+    gap: 2vw;
+}
+
+app-post-list {
+    flex: 1;
+}
+
+app-post {
+    flex: 3;
+}
+
+app-comment {
+    flex: 1;
+}
+
+#source-link {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    color: aliceblue;
+}
