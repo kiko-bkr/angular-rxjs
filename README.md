@@ -20,5 +20,5 @@ Therefore I took it upon myself to create my first RxJS x Angular application, a
 ## Resources
 
 Resources that helped me get into the reactive programming mindset:
-- this [intro video](https://www.youtube.com/watch?v=Bme_RiT9CK4&t=802s) by [Paco van der Linden](https://github.com/pavadeli)
+- this [intro video](https://youtu.be/Bme_RiT9CK4) by [Paco van der Linden](https://github.com/pavadeli)
 - this [tutorial](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) by [André Staltz](https://gist.github.com/staltz)
