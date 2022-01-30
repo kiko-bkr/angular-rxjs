@@ -1,7 +1,7 @@
 <div class="comment-div main-component" *ngIf="(currentPost$ | async) as currentPost">
     <h2>Leave a comment</h2>
     <div *ngIf="currentPost.id !== 0">
-        <form id="form-comment" [formGroup]="formGroup" (ngSubmit)="onSubmit(currentPost)">
+        <form id="form-comment" [formGroup]="formGroup"  (ngSubmit)="onSubmit(currentPost)">
             <label for="input-comment-title">Title</label>
             <input id="input-comment-title" type="text" formControlName="title" [value]="">
             <textarea id="input-comment-body" formControlName="body" [value]=""></textarea>

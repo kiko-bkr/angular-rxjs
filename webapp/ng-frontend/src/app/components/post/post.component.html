@@ -11,20 +11,33 @@
             <div>
                 <h1>Comments</h1>
             </div>
-            <form [formGroup]="formGroup">
-                <input id="radio-positive" type="radio" formControlName="positive" [value]=true>
-                <label for="radio-positive">Positive</label>
-                <input id="radio-negative" type="radio" formControlName="positive" [value]=false>
-                <label for="radio-negative">Negative</label>
-                <label id="label-contains" for="text-contains">Contains:</label>
-                <input id="text-contains" type="text" formControlName="contains" [value]="">
-            </form>
-            <div class="comments" *ngFor="let comment of currentComments$ | async">
-                <div>
-                    <h3>{{ comment.title }}</h3>
-                    <p [ngStyle]="{'color': comment.positive ? 'green' : 'red'}">
-                        {{ comment.body }}
-                    </p>
+            <div class="form-div">
+                <form [formGroup]="formGroup">
+                    <input id="radio-positive" type="radio" formControlName="positive" [value]=true>
+                    <label for="radio-positive">Positive</label>
+                    <input id="radio-negative" type="radio" formControlName="positive" [value]=false>
+                    <label for="radio-negative">Negative</label>
+                    <label id="label-contains" for="text-contains">Contains:</label>
+                    <input id="text-contains" type="text" formControlName="contains" [value]="">
+                </form>
+            </div>
+            <div class="comments">
+                <div *ngFor="let comment of currentComments$ | async">
+                    <div class="comment-gradient-div"
+                        [style.--color]="comment.positive ? 'rgba(0,75,0,1)' : 'rgba(100,0,0,1)'">
+                        <div class="comment-div">
+                            <div>
+                                <img *ngIf="comment.positive"
+                                    src="https://img.icons8.com/external-kmg-design-basic-outline-kmg-design/32/000000/external-like-ui-essential-kmg-design-basic-outline-kmg-design.png" />
+                                <img *ngIf="!comment.positive"
+                                    src="https://img.icons8.com/external-kmg-design-basic-outline-kmg-design/32/000000/external-dislike-ui-essential-kmg-design-basic-outline-kmg-design.png" />
+                            </div>
+                            <div class="comment-content-div">
+                                <h3>{{ comment.title }}</h3>
+                                <p>{{ comment.body }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

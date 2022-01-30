@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { map, Observable, startWith } from 'rxjs';
 import { CommentInput } from 'src/app/models/comment-input.model';
+import { Comment } from 'src/app/models/comment.model';
 import { Post } from 'src/app/models/post.model';
 import { CommentService } from 'src/app/services/comment/comment.service';
 import { PostService } from 'src/app/services/post/post.service';
@@ -36,9 +37,10 @@ export class CommentComponent implements OnInit {
 
   onSubmit(post: Post) {
     let input: CommentInput = this.formGroup.value;
-    let pos: boolean = input.positive !== null ? input.positive : false;
-    this.commentService.addComment({...input, positive: pos,  id: 0, postId: 0}, post);
-    this.formGroup.patchValue(this.defaultValues);
+    let pos: boolean = !!input.positive;
+    let newComment: Comment = {...input, positive: pos,  id: 0, postId: 0};
+    this.commentService.addComment(newComment, post);
+    this.formGroup.patchValue(this.defaultValues); 
   }
 
 }

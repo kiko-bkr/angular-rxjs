@@ -1,11 +1,14 @@
 :host {
     display: flex;
+    --component-color: wheat
 }
 
 .post-div {
     flex: 1;
     display: flex;
-    background: wheat;
+    background: var(--component-color);
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .header-div {
@@ -27,6 +30,11 @@
     background: linear-gradient(114deg, rgba(255,255,255,1) 0%, rgba(137,141,142,1) 93%, rgba(94,99,100,1) 100%);
 }
 
+.form-div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 input {
     margin-left: 10px;
     margin-right: 10px;
@@ -34,4 +42,28 @@ input {
 
 #label-contains {
     margin-left: 20px;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.comment-gradient-div {
+    background: var(--color);
+    background: linear-gradient(166deg, var(--color) 0%, rgba(94,99,100,0) 80%);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.comment-div {
+    display: flex;
+    background: var(--component-color);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.comment-content-div {
+    padding: 0px 15px 0px 15px;
 }
