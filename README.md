@@ -13,7 +13,7 @@ I have made a functioning posts/comments application. I managed to avoid manual 
 
 As I mentioned, one of the reasons why I am trying to make do with the `async` pipe exclusively is because it is a better method of asynchronous data stream consumption. After all it prompts Angular to automatically unsubscribe on the component's destruction. It also removes boilerplate imperative (and unreliable!) imperative code.
 
-However, the main reason and motivation was a [talk at ng-conf 2019](https://www.youtube.com/watch?v=-4cwkHNguXE&t=769s) where [Mike Pearson](https://github.com/mfp22) demonstrated one possible severe pitfall of manual subscriptions: being out of sync with received data.
+However, the main reason and motivation was a [talk at ng-conf 2019](https://youtu.be/-4cwkHNguXE?t=374) where [Mike Pearson](https://github.com/mfp22) demonstrated one possible severe pitfall of manual subscriptions: being out of sync with received data.
 
 Therefore I took it upon myself to create my first RxJS x Angular application, and also try my best not only to stick to the reactive paradigm, but also to avoid using the `subscribe()` method.
 
