@@ -1,16 +1,18 @@
 <div class="comment-div main-component" *ngIf="(currentPost$ | async) as currentPost">
     <h2>Leave a comment</h2>
-    <div *ngIf="currentPost.id !== 0">
-        <form id="form-comment" [formGroup]="formGroup"  (ngSubmit)="onSubmit(currentPost)">
+    <div class="comment-form-div" *ngIf="currentPost.id !== 0">
+        <form id="form-comment" [formGroup]="formGroup" (ngSubmit)="onSubmit(currentPost)">
             <label for="input-comment-title">Title</label>
             <input id="input-comment-title" type="text" formControlName="title" [value]="">
             <textarea id="input-comment-body" formControlName="body" [value]=""></textarea>
-            <input id="comment-radio-positive" type="radio" formControlName="positive" [value]=true>
-            <label for="radio-positive">Positive</label>
-            <input id="comment-radio-negative" type="radio" formControlName="positive" [value]=false>
-            <label for="radio-negative">Negative</label>
-            <input type="submit" [disabled]="!(validStream$ | async)">
+            <div>
+                <input id="comment-radio-positive" type="radio" formControlName="positive" [value]=true>
+                <label for="radio-positive">Positive</label>
+                <input id="comment-radio-negative" type="radio" formControlName="positive" [value]=false>
+                <label for="radio-negative">Negative</label>
+            </div>
+            <input id="submit-button" type="submit" value="SUBMIT" [disabled]="!(validStream$ | async)">
         </form>
-        <h6>Word count: {{lengthCount$ | async}}</h6>
+        <h6>Character count: {{lengthCount$ | async}}</h6>
     </div>
 </div>
