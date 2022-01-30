@@ -38,6 +38,7 @@ export class PostComponent implements OnInit, OnDestroy {
   formResetSubscription: Subscription;
 
   ngOnDestroy(): void {
+    if (this.formResetSubscription)
       this.formResetSubscription.unsubscribe();
   }
 }
